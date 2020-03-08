@@ -1,0 +1,71 @@
+//
+// Component: Search
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+//@search-default-background:                         transparent;
+
+@internal-search-default-image:                     "../../node_modules/uikit/src/images/components/search-default.svg";
+@internal-search-navbar-image:                      "../../node_modules/uikit/src/images/components/search-navbar.svg";
+@internal-search-large-image:                       "../../node_modules/uikit/src/images/components/search-large.svg";
+
+//
+// New
+//
+
+@search-default-border-width:                       @global-border-width;
+@search-default-border:                             @global-border;
+
+
+// Default modifiers
+// ========================================================================
+
+.hook-search-default-input() { border: @search-default-border-width solid @search-default-border; }
+
+
+// Navbar modifiers
+// ========================================================================
+
+.hook-search-navbar-input() {}
+
+.hook-search-default-input-focus() {}
+
+
+// Large modifiers
+// ========================================================================
+
+.hook-search-large-input() {}
+
+
+// Toggle
+// ========================================================================
+
+.hook-search-toggle() {}
+
+.hook-search-toggle-hover() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-search-misc() {}
+
+
+// Inverse
+// ========================================================================
+
+@inverse-search-default-background:            transparent;
+
+.hook-inverse-search-default-input() { border-color: @inverse-global-border; }
+.hook-inverse-search-default-input-focus() {}
+
+.hook-inverse-search-navbar-input() {}
+
+.hook-inverse-search-large-input() {}
+
+.hook-inverse-search-toggle() {}
+.hook-inverse-search-toggle-hover() {}

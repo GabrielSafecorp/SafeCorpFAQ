@@ -1,0 +1,65 @@
+//
+// Component: Text
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+//
+// New
+//
+
+@text-lead-font-size:                           1.3rem;
+@text-meta-link-color:                          @text-meta-color;
+@text-meta-link-hover-color:                    @global-color;
+
+
+// Style modifiers
+// ========================================================================
+
+.hook-text-lead() {
+    font-weight: 100;
+}
+
+.hook-text-meta() {
+
+    a { color: @text-meta-link-color; }
+
+    a:hover {
+        color: @text-meta-link-hover-color;
+        text-decoration: none;
+    }
+
+}
+
+
+// Size modifiers
+// ========================================================================
+
+.hook-text-small() {}
+
+.hook-text-large() {}
+
+
+// Color modifiers
+// ========================================================================
+
+.hook-text-primary() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-text-misc() {}
+
+
+// Inverse
+// ========================================================================
+
+.hook-inverse-text-lead() {
+    //color: rgba(255, 255, 255, 0.95);
+}
+.hook-inverse-text-meta() {}
+.hook-inverse-text-primary() {}
