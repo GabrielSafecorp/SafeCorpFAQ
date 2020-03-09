@@ -67,7 +67,7 @@ class ModuleController extends Controller
         $modules =  Module::all();       
         $articles =  Article::where('modules_id', '=', $module->id)->get();      
 
-        return view('modules.index', compact(['articles', 'modules']));
+        return view('modules.show', compact(['articles', 'modules', 'modulo']));
        
     }
 
