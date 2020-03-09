@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Module;
+use App\Topic;
+use App\User;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -46,7 +49,11 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        //
+        $articles = Article::take(3)->latest()->get();
+        $topics = Topic::where('article_id', '=', $article->id)->get(); 
+        $module = Module::where('id', '=', $article->modules_id)->first(); 
+        $user = User::where('id', '=', $article->user_id)->first(); 
+        return view('articles.show', compact(['module', 'article','articles','topics','user']));
     }
 
     /**
