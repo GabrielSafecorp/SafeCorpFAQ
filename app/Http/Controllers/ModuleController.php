@@ -65,9 +65,13 @@ class ModuleController extends Controller
     {
         
         $modules =  Module::all();       
-        $articles =  Article::where('modules_id', '=', $module->id)->get();      
+        $count =   Module::all()->Count();       
+        $articles =  Article::all(); 
 
-        return view('modules.show', compact(['articles', 'modules', 'modulo']));
+        //articlesMenu = Precisa do Metodo Popular!
+        $articlesMenu =  Article::take(10)->get();      
+
+        return view('modules.show', compact(['articles', 'modules', 'module', 'articlesMenu', 'count']));
        
     }
 

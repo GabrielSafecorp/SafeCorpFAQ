@@ -1,34 +1,36 @@
-@extends('basemodulo')
+@extends('basecategory')
 @section('ModulosMenus')
-    @foreach ($modules as $module)
-    <ul class="uk-nav-sub">
-        <a href="{{route('module.show', ['module' => $module])}}">{{$module->title}}</a>
-    </ul>
+    @foreach ($modules as $moduleMenu)
+<li>
+    @if ($moduleMenu->id == $module->id)
+    <a class="uk-text-bold" href="#">{{$moduleMenu->title}}</a> <span uk-icon="icon: chevron-right"></span>
+    @else        
+    <a href="{{route('module.show', ['module' => $moduleMenu])}}">{{$moduleMenu->title}}</a>
+    @endif
+</li>
     @endforeach
 @endsection
 
 @section('ArticlesSubMenu')
-    @foreach ($articles as $modulessub)
+    @foreach ($articlesMenu as $articlessub)
     <li>
-    <a href="#{{$modulessub->id}}" uk-scroll="offset: 50">{{$modulessub->title}}</a>
+    <a href="article/{{$articlessub->id}}">{{$articlessub->title}}</a>
     </li>
     @endforeach
 @endsection
 
-@section('Articles')
+@section('ArtigosShow')
 
-<h2 id="{{$module->id}}">{{$module->title}}</h2>
-<ul class="list-faq" uk-accordion="multiple: true">
-    @foreach ($articles as $desc)
+@foreach ($articles as $articleLink)
+@if ($articleLink->modules_id == $module->id)
+<li>
+    <h3><a href="article.html">{{$articleLink->title}}</span></a></h3>
+</li>
 
-    <li>
-        <h3 class="uk-accordion-title">{{$desc->title}}</h3>
-        <div class="uk-accordion-content">
-            <a href="#"><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure eprehenderit in voluptate velit esse cillum dolore dolor reprehenderit.</p></a>
-        </div>
-    </li>
+@endif
+
     
-    @endforeach
-</ul>
-       
+@endforeach      
 @endsection
+
+

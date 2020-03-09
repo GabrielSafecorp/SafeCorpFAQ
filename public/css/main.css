@@ -423,11 +423,14 @@ figure,
 footer,
 header,
 main,
-nav,
 section,
 summary {
   /* 1 */
   display: block;
+}
+
+nav{
+  position: fixed;
 }
 /*
  * Add the correct vertical alignment in Chrome, Firefox, and Opera.

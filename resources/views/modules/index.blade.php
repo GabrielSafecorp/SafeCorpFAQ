@@ -1,9 +1,11 @@
-@extends('basefaq')
-@section('ModulosMenus')
+@extends('baseMpopular')
+@section('Categories')
+
+
     @foreach ($modules as $module)
-    <ul class="uk-nav-sub">
+    <li class="uk-nav-sub">
         <a href="{{route('module.show', ['module' => $module])}}">{{$module->title}}</a>
-    </ul>
+    </li>
     @endforeach
 @endsection
 
@@ -24,7 +26,7 @@
     <li>
         <h3 class="uk-accordion-title">{{$desc->title}}</h3>
         <div class="uk-accordion-content">
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure eprehenderit in voluptate velit esse cillum dolore dolor reprehenderit.</p>
+            <a href="{{route('article.show', ['article' => $desc])}}"><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure eprehenderit in voluptate velit esse cillum dolore dolor reprehenderit.</p></a>
         </div>
     </li>
     @endif

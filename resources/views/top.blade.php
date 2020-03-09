@@ -15,7 +15,7 @@
             <div class="uk-container">
                 <div uk-navbar>
                     <div class="uk-navbar-left">
-                        <a class="uk-navbar-item uk-logo uk-text-uppercase" href="{{route('faq.home')}}"><span class="uk-margin-small-right" uk-icon="icon: lifesaver"></span> Knowledge</a>
+                        <a class="uk-navbar-item uk-logo uk-text-uppercase" href="{{route('faq.home')}}"><span class="uk-margin-small-right" uk-icon="icon: lifesaver"></span> SafeCorp FAQ</a>
                     </div>
                     <div class="uk-navbar-right">
                         <ul class="uk-navbar-nav uk-text-uppercase uk-visible@m uk-margin-medium-left">
@@ -40,7 +40,7 @@
                             
                             @auth
                             <li> 
-                            <a href="{{ url('/home') }}"> {{ Auth::user()->name }}</a>
+                            <a href="{{ url('/home') }}"> {{ Auth::user()->name }}
                                 <div class="uk-navbar-dropdown">
                                     <ul class="uk-nav uk-navbar-dropdown-nav">
                                         <a class="dropdown-item" href="{{ route('logout') }}"

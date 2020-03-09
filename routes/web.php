@@ -13,13 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('welcome', 'ModuleController@home')->name('faq.home');
-Route::get('/', 'ModuleController@home')->name('faq.home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
 
 Route::post('/', 'ModuleController@store')->name('module.store');
 Route::get('/modules/create', 'ModuleController@create')->name('module.create');
@@ -36,4 +29,13 @@ Route::get('/articles/{article}', 'ArticleController@show')->name('article.show'
 Route::get('/articles/{article}/edit', 'ArticleController@edit')->name('article.edit');
 Route::put('/articles/{article}', 'ArticleController@update')->name('article.update');
 Route::delete('/articles/{article}', 'ArticleController@destroy')->name('article.destroy');
+
+
+Route::get('welcome', 'ModuleController@home')->name('faq.home');
+Route::get('/', 'ModuleController@home')->name('faq.home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 
