@@ -15,12 +15,12 @@
             <div class="uk-container">
                 <div uk-navbar>
                     <div class="uk-navbar-left">
-                        <a class="uk-navbar-item uk-logo uk-text-uppercase" href="{{route('module.index')}}"><span class="uk-margin-small-right" uk-icon="icon: lifesaver"></span> Knowledge</a>
+                        <a class="uk-navbar-item uk-logo uk-text-uppercase" href="{{route('faq.home')}}"><span class="uk-margin-small-right" uk-icon="icon: lifesaver"></span> Knowledge</a>
                     </div>
                     <div class="uk-navbar-right">
                         <ul class="uk-navbar-nav uk-text-uppercase uk-visible@m uk-margin-medium-left">
                             <li>
-                                <a href="article.html">Modulos</a>
+                                <a href="..\modules">Modulos</a>
                                 <div class="uk-navbar-dropdown">
                                     <ul class="uk-nav uk-navbar-dropdown-nav">
                                         @section('ModulosMenus')
