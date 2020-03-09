@@ -14,7 +14,7 @@
 @section('ArticlesSubMenu')
     @foreach ($articlesMenu as $articlessub)
     <li>
-    <a href="article/{{$articlessub->id}}">{{$articlessub->title}}</a>
+    <a href="../article/{{$articlessub->id}}">{{$articlessub->title}}</a>
     </li>
     @endforeach
 @endsection
