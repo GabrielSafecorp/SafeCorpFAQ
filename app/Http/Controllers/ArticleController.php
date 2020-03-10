@@ -49,11 +49,12 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
+        $modules = Module::all();
         $articles = Article::take(3)->latest()->get();
         $topics = Topic::where('article_id', '=', $article->id)->get(); 
         $module = Module::where('id', '=', $article->modules_id)->first(); 
         $user = User::where('id', '=', $article->user_id)->first(); 
-        return view('articles.show', compact(['module', 'article','articles','topics','user']));
+        return view('articles.show', compact(['module','modules', 'article','articles','topics','user']));
     }
 
     /**

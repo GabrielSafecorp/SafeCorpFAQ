@@ -1,13 +1,24 @@
-@extends('basecategory')
+@extends('layouts/basecategory')
 @section('ModulosMenus')
     @foreach ($modules as $moduleMenu)
-<li>
+
     @if ($moduleMenu->id == $module->id)
-    <a class="uk-text-bold" href="#">{{$moduleMenu->title}}</a> <span uk-icon="icon: chevron-right"></span>
+    <li><a class="uk-text-bold" href="#" style="color: #425869;">{{$moduleMenu->title}}</a></li>
     @else        
-    <a href="{{route('module.show', ['module' => $moduleMenu])}}">{{$moduleMenu->title}}</a>
+    <li><a href="{{route('module.show', ['module' => $moduleMenu])}}">{{$moduleMenu->title}}</a></li>
     @endif
-</li>
+
+    @endforeach
+@endsection
+@section('ModulosMenusLeft')
+    @foreach ($modules as $moduleMenu)
+
+    @if ($moduleMenu->id == $module->id)
+    <li><a class="uk-text-bold" href="#">{{$moduleMenu->title}}</a> <span uk-icon="icon: chevron-right"></span></li>
+    @else        
+    <li><a href="{{route('module.show', ['module' => $moduleMenu])}}">{{$moduleMenu->title}}</a></li>
+    @endif
+
     @endforeach
 @endsection
 
@@ -24,7 +35,7 @@
 @foreach ($articles as $articleLink)
 @if ($articleLink->modules_id == $module->id)
 <li>
-    <h3><a href="article.html">{{$articleLink->title}}</span></a></h3>
+<h3><a href="../article/{{$articleLink->id}}">{{$articleLink->title}}</span></a></h3>
 </li>
 
 @endif

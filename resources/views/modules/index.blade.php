@@ -1,7 +1,5 @@
-@extends('baseMpopular')
+@extends('')
 @section('Categories')
-
-
     @foreach ($modules as $module)
     <li class="uk-nav-sub">
         <a href="{{route('module.show', ['module' => $module])}}">{{$module->title}}</a>
